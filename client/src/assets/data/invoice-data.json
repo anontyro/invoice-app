@@ -1,6 +1,6 @@
 [
     {
-        "id": "1",
+        "id": "ed278d",
         "title": "First Test Invoice",
         "dateSent": null,
         "dateDue": "2022-01-30T00:00:00.000Z",
@@ -16,18 +16,18 @@
         },
         "billTo": {
             "address": {
-                "streetAddressLine1": "123 Main Street",
-                "streetAddressLine2": "Suite 100",
-                "city": "New York",
-                "state": "NY",
-                "postCode": "10001",
+                "streetAddressLine1": "99 Some Street",
+                "streetAddressLine2": "Block 5",
+                "city": "Philadelphia",
+                "state": "PA",
+                "postCode": "19123",
                 "country": "USA"
             },
             "personalDetails": {
-                "firstName": "John",
-                "lastName": "Doe",
-                "email": "johnDoe@Doe.com",
-                "contactNumber": "1234567890"
+                "firstName": "Sam",
+                "lastName": "Smith",
+                "email": "SS@Smithy.com",
+                "contactNumber": "0987654321"
             }
         },
         "description": "",
@@ -44,7 +44,7 @@
         "status": "draft"
     },
     {
-        "id": "2",
+        "id": "c7032a",
         "title": "Second Test Invoice",
         "dateSent": null,
         "dateDue": "2022-05-10T00:00:00.000Z",
