@@ -2,14 +2,17 @@ import { Dispatch } from 'react';
 import { RootState } from '..';
 import Invoice from '../../interfaces/Invoice';
 import {
+  getInvoiceData,
+  saveInvoiceData,
+} from '../../utils/server/fetchValues';
+import {
   CLEAR_ACTIVE_INVOICE,
   GETTING_INVOICE_LIST,
   GOT_INVOICE_LIST,
-  LOAD_INVOICE,
-  SAVE_INVOICE,
+  IS_LOADING,
+  LOADING_COMPLETE,
   UPDATE_ACTIVE_INVOICE,
 } from './consts';
-import invoiceData from '../../assets/data/invoice-data.json';
 
 export interface GettingInvoiceList {
   type: typeof GETTING_INVOICE_LIST;
@@ -29,14 +32,12 @@ export interface ClearActiveInvoice {
   type: typeof CLEAR_ACTIVE_INVOICE;
 }
 
-export interface SaveInvoice {
-  type: typeof SAVE_INVOICE;
-  payload: Invoice;
+export interface IsLoading {
+  type: typeof IS_LOADING;
 }
 
-export interface LoadInvoice {
-  type: typeof LOAD_INVOICE;
-  payload: Invoice;
+export interface LoadingComplete {
+  type: typeof LOADING_COMPLETE;
 }
 
 export type InvoiceActions =
@@ -44,8 +45,16 @@ export type InvoiceActions =
   | GotInvoiceList
   | UpdateActiveInvoice
   | ClearActiveInvoice
-  | SaveInvoice
-  | LoadInvoice;
+  | IsLoading
+  | LoadingComplete;
+
+const isLoading = (): IsLoading => ({
+  type: IS_LOADING,
+});
+
+const loadingComplete = (): LoadingComplete => ({
+  type: LOADING_COMPLETE,
+});
 
 const gettingInvoiceList = (): GettingInvoiceList => ({
   type: GETTING_INVOICE_LIST,
@@ -105,11 +114,29 @@ export const getInvoiceList = (force: boolean = false) => {
   };
 };
 
-// used to simulate async call whilst using test data
-const getInvoiceData = async (): Promise<Invoice[]> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(invoiceData as Invoice[]);
-    }, 1000);
-  });
+export const saveInvoice = (invoice: Invoice) => {
+  return async (
+    dispatch: Dispatch<InvoiceActions>,
+    getState: () => RootState,
+  ): Promise<void> => {
+    dispatch(isLoading());
+    const state = getState();
+
+    const savedInvoice = await saveInvoiceData(invoice);
+
+    const currentInvoices = state.invoices.invoiceList;
+
+    const existingInvoiceIndex = currentInvoices.findIndex(
+      (invoice) => invoice.id === savedInvoice.id,
+    );
+
+    if (existingInvoiceIndex !== -1) {
+      currentInvoices[existingInvoiceIndex] = savedInvoice;
+    } else {
+      currentInvoices.push(savedInvoice);
+    }
+
+    dispatch(gotInvoiceList(currentInvoices));
+    dispatch(updateActiveInvoice(savedInvoice));
+  };
 };

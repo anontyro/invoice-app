@@ -3,6 +3,8 @@ import {
   CLEAR_ACTIVE_INVOICE,
   GETTING_INVOICE_LIST,
   GOT_INVOICE_LIST,
+  IS_LOADING,
+  LOADING_COMPLETE,
   UPDATE_ACTIVE_INVOICE,
 } from './consts';
 import { InvoiceState } from './interfaces';
@@ -18,6 +20,16 @@ const invoices = (
   action: InvoiceActions,
 ): InvoiceState => {
   switch (action.type) {
+    case IS_LOADING:
+      return {
+        ...state,
+        isLoading: true,
+      };
+    case LOADING_COMPLETE:
+      return {
+        ...state,
+        isLoading: false,
+      };
     case GETTING_INVOICE_LIST:
       return {
         ...state,
