@@ -1,0 +1,18 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "Standard Banner",
+            "price": "150",
+            "description": "A basic banner design",
+            "currency": "USD"
+        },
+        {
+            "id": "2",
+            "name": "Standard Email",
+            "price": "200",
+            "description": "Our standard email design",
+            "currency": "USD"
+        }
+    ]
+}

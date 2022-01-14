@@ -1,0 +1,88 @@
+[
+    {
+        "id": "1",
+        "title": "First Test Invoice",
+        "dateSent": null,
+        "billFrom": {
+            "address": {
+                "streetAddressLine1": "123 Main Street",
+                "streetAddressLine2": "Suite 100",
+                "city": "New York",
+                "state": "NY",
+                "postCode": "10001",
+                "country": "USA"
+            }
+        },
+        "billTo": {
+            "address": {
+                "streetAddressLine1": "123 Main Street",
+                "streetAddressLine2": "Suite 100",
+                "city": "New York",
+                "state": "NY",
+                "postCode": "10001",
+                "country": "USA"
+            },
+            "personalDetails": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "johnDoe@Doe.com",
+                "contactNumber": "1234567890"
+            }
+        },
+        "description": "",
+        "items": [
+            {
+                "id": "1",
+                "name": "Standard Banner",
+                "price": "150",
+                "description": "A basic banner design",
+                "currency": "USD",
+                "quantity": 5
+            }
+        ],
+        "status": "draft"
+    },
+    {
+        "id": "2",
+        "title": "Second Test Invoice",
+        "dateSent": null,
+        "billFrom": {
+            "address": {
+                "streetAddressLine1": "123 Main Street",
+                "streetAddressLine2": "Suite 100",
+                "city": "New York",
+                "state": "NY",
+                "postCode": "10001",
+                "country": "USA"
+            }
+        },
+        "billTo": {
+            "address": {
+                "streetAddressLine1": "123 Main Street",
+                "streetAddressLine2": "Suite 100",
+                "city": "New York",
+                "state": "NY",
+                "postCode": "10001",
+                "country": "USA"
+            },
+            "personalDetails": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "email": "johnDoe@Doe.com",
+                "contactNumber": "1234567890"
+            }
+        },
+        "description": "",
+        "items": [
+            {
+                "id": "2",
+                "name": "Standard Email",
+                "price": "200",
+                "description": "Our standard email design",
+                "currency": "USD",
+                "quantity": 5
+            }
+        ],
+        "status": "sent"
+    }
+]

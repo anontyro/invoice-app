@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { getInvoiceList } from './store/Invoices/actions';
+import { RootState } from './store/';
+import { InvoiceState } from './store/Invoices/interfaces';
 
 function App() {
+  const dispatch = useDispatch();
+  const { isLoading, invoiceList } = useSelector<RootState>(
+    (state) => state.invoices,
+  ) as InvoiceState;
+  useEffect(() => {
+    dispatch(getInvoiceList());
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
