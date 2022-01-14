@@ -1,0 +1,64 @@
+{
+    "data": {
+        "light": {
+            "id": "T_001",
+            "name": "Light",
+            "colors": {
+                "primary": "#765be4",
+                "background": "#F5F6F8",
+                "textPrimary": "#c6c5c9",
+                "textSecondary": "#000000",
+                "button": {
+                    "background": "#765be4",
+                    "text": "#FFFFFF",
+                    "border": "#765be4"
+                },
+                "buttonSecondary": {
+                    "background": "#EDEDF6",
+                    "text": "#5129f3",
+                    "border": "#cdcdf1"
+                },
+                "link": {
+                    "text": "#000000",
+                    "hover": "#000000"
+                },
+                "card": {
+                    "background": "#FFFFFF",
+                    "text": "#000000",
+                    "textMuted": "#c6c5c9",
+                    "textSecondary": "#765be4"
+                }
+            }
+        },
+        "dark": {
+            "id": "T_002",
+            "name": "Dark",
+            "colors": {
+                "primary": "#765be4",
+                "background": "#121822",
+                "textPrimary": "#c6c5c9",
+                "textSecondary": "#FFFFFF",
+                "button": {
+                    "background": "#765be4",
+                    "text": "#FFFFFF",
+                    "border": "#765be4"
+                },
+                "buttonSecondary": {
+                    "background": "#EDEDF6",
+                    "text": "#765be4",
+                    "border": "#EDEDF6"
+                },
+                "link": {
+                    "text": "#FFFFFF",
+                    "hover": "#FFFFFF"
+                },
+                "card": {
+                    "background": "#18202D",
+                    "text": "#FFFFFF",
+                    "textMuted": "#c6c5c9",
+                    "textSecondary": "#765be4"
+                }
+            }
+        }
+    }
+}
