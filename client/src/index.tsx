@@ -5,10 +5,12 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import './index.css';
 import App from './App';
+import LandingPage from './pages/Landing/';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import rootReducer from './store/';
 import { Provider } from 'react-redux';
+import InvoicePage from './pages/Invoice';
 
 const store = createStore(
   rootReducer,
@@ -20,7 +22,8 @@ ReactDOM.render(
     <Router>
       <Provider store={store}>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/invoice/:id" element={<InvoicePage />} />
         </Routes>
       </Provider>
     </Router>

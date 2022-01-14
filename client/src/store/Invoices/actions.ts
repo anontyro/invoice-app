@@ -86,11 +86,18 @@ export const setActiveInvoice = (id: string) => {
   };
 };
 
-export const getInvoiceList = () => {
+export const getInvoiceList = (force: boolean = false) => {
   return async (
     dispatch: Dispatch<InvoiceActions>,
     getState: () => RootState,
   ): Promise<void> => {
+    const state = getState();
+    const currentInvoices = state.invoices.invoiceList;
+
+    if (currentInvoices.length !== 0 && !force) {
+      return;
+    }
+
     dispatch(gettingInvoiceList());
 
     const invoices = await getInvoiceData();

@@ -5,7 +5,11 @@ import GlobalStyles from './theme/GlobalStyles';
 import CustomTheme from './theme/interface/CustomTheme';
 import useTheme from './theme/useTheme';
 
-const MainContent = styled.div``;
+const MainContent = styled.div`
+  height: 100%;
+  width: 70%;
+  margin: 5rem auto;
+`;
 
 interface Props {
   children: ReactNode;

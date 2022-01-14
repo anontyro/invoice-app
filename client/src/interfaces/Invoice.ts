@@ -38,6 +38,7 @@ interface Invoice {
   title: string;
   id: string;
   dateSent: Date | null;
+  dateDue: string | null;
   billFrom: {
     address: Address;
   };
